@@ -9,6 +9,7 @@ import { CandyUpgradeNotificationChangedEvent } from "#events/battle-scene";
 import type { SettingsUiHandler } from "#ui/settings-ui-handler";
 import { updateWindowType } from "#ui/ui-theme";
 import { isLocal } from "#utils/common";
+import { DIFFICULTY_EXP_RATE_OPTIONS, DIFFICULTY_ENEMY_LEVEL_OPTIONS, DIFFICULTY_LUCK_RATE_OPTIONS } from "#system/settings/difficulty-options";
 import i18next from "i18next";
 
 const VOLUME_OPTIONS: SettingOption[] = [
@@ -707,21 +708,21 @@ export const Setting: Array<Setting> = [
   {
     key: SettingKeys.Difficulty_Exp_Rate,
     label: "EXP Earning Rate",
-    options: require("./difficulty-options").DIFFICULTY_EXP_RATE_OPTIONS,
+    options: DIFFICULTY_EXP_RATE_OPTIONS,
     default: 2, // 1x (Normal)
     type: SettingType.GENERAL,
   },
   {
     key: SettingKeys.Difficulty_Enemy_Level,
-    label: "Enemy's Pokemon Level Multiplier",
-    options: require("./difficulty-options").DIFFICULTY_ENEMY_LEVEL_OPTIONS,
+    label: "Enemy's Level Multiplier",
+    options: DIFFICULTY_ENEMY_LEVEL_OPTIONS,
     default: 2, // 1x (Normal)
     type: SettingType.GENERAL,
   },
   {
     key: SettingKeys.Difficulty_Luck_Rate,
     label: "Luck Rate Multiplier",
-    options: require("./difficulty-options").DIFFICULTY_LUCK_RATE_OPTIONS,
+    options: DIFFICULTY_LUCK_RATE_OPTIONS,
     default: 2, // 1x (Normal)
     type: SettingType.GENERAL,
   },
